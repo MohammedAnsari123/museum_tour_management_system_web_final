@@ -11,6 +11,42 @@ function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
+
+
+const slider = document.getElementById("imageSlider");
+const slides = document.querySelectorAll(".slide");
+const slidesPerView = 3;
+let currentIndex = 0;
+
+function slideLeft() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateSlider();
+  }
+}
+
+function slideRight() {
+  const maxIndex = Math.ceil(slides.length / slidesPerView) - 1;
+  if (currentIndex < maxIndex) {
+    currentIndex++;
+    updateSlider();
+  }
+}
+
+function updateSlider() {
+  const slideWidth = slides[0].offsetWidth;
+  const offset = currentIndex * slideWidth * slidesPerView;
+  slider.style.transform = `translateX(-${offset}px)`;
+}
+
+// Optional: responsive fix if image width changes
+window.addEventListener("resize", updateSlider);
+
+
+
+
+
+
 // 3. Animated visitor counter
 let count = 0;
 const counter = document.getElementById('visitorCount');
@@ -93,3 +129,5 @@ reviewBtn.addEventListener('click', () => {
     alert('Please enter a rating between 1 and 5.');
   }
 });
+
+

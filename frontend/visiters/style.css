@@ -125,25 +125,87 @@ body {
 }
 
 /* Gallery */
-.gallery {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+
+.gallery-section {
+    text-align: center;
+    background: #F1FAEE;
+    padding: 2rem;
 }
 
-.gallery img {
-  width: 260px;
-  height: auto;
-  margin: 10px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+.slider-container {
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
 }
+
+.slide {
+    flex: 0 0 33.3333%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.info {
+    text-align: left;
+    background: #A8DADC;
+    padding: 1rem;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    color: #1D3557;
+}
+
+.info h3 {
+    margin-bottom: 0.5rem;
+    color: #1D3557;
+}
+
+.info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info li {
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.slider-buttons {
+    margin-top: 20px;
+}
+
+.slider-buttons button {
+    background-color: #457B9D;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.slider-buttons button:hover {
+    background-color: #1D3557;
+}
+
 
 /* Auth Buttons */
 .auth button {
@@ -265,114 +327,3 @@ canvas {
   100% { transform: translateY(0); opacity: 1; }
 }
 
-
-/* body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  transition: background 0.4s, color 0.4s;
-}
-
-.light-mode {
-  background: #fff;
-  color: #111;
-}
-
-.dark-mode {
-  background: #111;
-  color: #fff;
-}
-
-.theme-toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  font-size: 24px;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.hero-section {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.hero-content {
-  z-index: 1;
-  color: white;
-  text-align: center;
-  backdrop-filter: brightness(70%);
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-}
-
-.hero-content button {
-  padding: 10px 25px;
-  font-size: 1rem;
-  background: #ff5e57;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.gallery img {
-  width: 250px;
-  margin: 10px;
-  border-radius: 10px;
-}
-
-.auth button,
-.booking button,
-.rating button {
-  margin: 8px;
-  padding: 10px 20px;
-  background: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-input {
-  margin: 5px;
-  padding: 10px;
-  width: 220px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.recommendations ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.recommendations li {
-  margin: 10px 0;
-  font-size: 1.1rem;
-}
-
-.counter-section {
-  font-size: 3rem;
-  font-weight: bold;
-} */
