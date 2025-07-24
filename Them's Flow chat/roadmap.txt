@@ -1,0 +1,112 @@
+topic :- museum management system
+
+
+Homepage :-
+
+Museum Management System
+└──> Choose User Type?
+      ├── Admin
+      └── Visitor
+
+
+Admin Workflow :-
+
+Admin Login → Admin Dashboard
+   ├── Manage Exhibits
+   │     ├── Add Exhibit
+   │     ├── Edit Exhibit
+   │     └── Remove Exhibit
+   ├── Manage Tours
+   │     ├── Add Tour
+   │     ├── Edit Tour
+   │     └── Remove Tour
+   ├── View Analytics
+   │     ├── Booking Analytics
+   │     ├── Map Visualization
+   │     └── Data Dashboard (India dataset)
+   ├── Review Feedback
+   │     ├── View Ratings
+   │     ├── Read Reviews
+   │     └── Respond to Feedback
+   └── Machine Learning Module
+         ├── Predict Booking & Time Scheduling
+         ├── Recommend Tours/Museums
+         ├── Chatbot Q&A
+         └── Dataset with Museum Descriptions
+
+
+Visitor Workflow :-
+
+Visitor
+   ├── New User → Register → Visitor Dashboard
+   └── Returning User → Login → Visitor Dashboard
+
+Visitor Dashboard
+   ├── Browse Exhibitions & Tours
+   │     ├── View Exhibit Details
+   │     │     ├── Images/Media
+   │     │     └── Descriptions
+   │     └── View Visit
+   │           ├── Choose Date & Time
+   │           ├── Select Number of People
+   │           ├── Confirm Booking
+   │           ├── Booking Confirmation
+   │           ├── Attend Tour
+   │           └── Rate & Review Tour
+   └── Recommendations (ML-Driven)
+         ├── Personalized Museum Suggestions
+         ├── Popular Exhibits
+         └── Nearby Museums (via API Tracking)
+
+
+
+Homepage
+└──> Choose User Type?
+├── Admin
+     │     └── Admin Login
+     │           └── Admin Dashboard
+     │                 ├── Manage Exhibits
+     │                 │     ├── Add Exhibit
+     │                 │     ├── Edit Exhibit
+     │                 │     └── Remove Exhibit
+     │                 ├── Manage Tours
+     │                 │     ├── Add Tour
+     │                 │     ├── Edit Tour
+     │                 │     └── Remove Tour
+     │                 ├── View Analytics
+     │                 │     ├── Booking Analytics
+     │                 │     ├── Map Visualization
+     │                 │     └── Data Dashboard (India-dataset)
+     │                 ├── Review Feedback
+     │                 │     ├── View Ratings
+     │                 │     ├── Read Reviews
+     │                 │     └── Respond to Feedback
+     │                 └── Machine Learning Module
+     │                       ├── Predict Booking & Time Scheduling
+     │                       ├── Recommend Tours/Museums
+     │                       ├── Chatbot Q&A
+     │                       └── Dataset with Museum Descriptions
+     │
+     └── Visitor (User)
+           ├── New User → Register → Visitor Dashboard
+           ├── Returning User → Login → Visitor Dashboard
+           │
+           └── Visitor Dashboard
+                 ├── Browse Exhibitions & Tours
+                 │     ├── View Exhibit Details
+                 │     │     ├── Images/Media
+                 │     │     └── Descriptions
+                 │     └── View Visit
+                 │           ├── Choose Date & Time
+                 │           ├── Select Number of People
+                 │           ├── Confirm Booking
+                 │           ├── Booking Confirmation
+                 │           ├── Attend Tour
+                 │           └── Rate & Review Tour
+                 └── Recommendations (ML-Driven)
+                       ├── Personalized Museum Suggestions
+                       ├── Popular Exhibits
+                       └── Nearby Museums (via API Tracking)
+
+
+

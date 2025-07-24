@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visitor Login/Register - PixelPast Museum</title>
+    <link rel="stylesheet" href="visitor_auth.css" />
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="tabs">
+            <button class="tab" onclick="showTab('login')">Login</button>
+            <button class="tab active" onclick="showTab('register')">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login" class="form">
+            <h2>Visitor Login</h2>
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Register Form -->
+        <div id="register" class="form active">
+            <h2>Visitor Registration</h2>
+            <input type="text" placeholder="Full Name" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button onclick="register()">Register</button>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll(".form").forEach(f => f.classList.remove("active"));
+            document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+            document.getElementById(tabId).classList.add("active");
+            if (tabId === "login") {
+                document.querySelector(".tab:nth-child(1)").classList.add("active");
+            } else if (tabId === "register") {
+                document.querySelector(".tab:nth-child(2)").classList.add("active");
+            }
+        }
+
+        function login() {
+            window.location.href = "../index.html";
+        }
+
+        function register() {
+            window.location.href = "../index.html";
+        }
+    </script>
+</body>
+
+</html>

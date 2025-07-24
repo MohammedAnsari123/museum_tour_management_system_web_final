@@ -1,0 +1,378 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.4s, color 0.4s;
+  scroll-behavior: smooth;
+}
+
+.light-mode {
+  background: #fff;
+  color: #111;
+}
+
+.dark-mode {
+  background: #111;
+  color: #fff;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  z-index: 1000;
+  cursor: pointer;
+  background: #fff;
+  color: #111;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: #eee;
+}
+
+/* Sections */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: '';
+  width: 50%;
+  height: 3px;
+  background-color: #4CAF50;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  color: white;
+  padding: 20px;
+  backdrop-filter: blur(8px) brightness(0.7);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  transition: all 0.4s;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease;
+}
+
+.hero-content button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  background: #ff5e57;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-content button:hover {
+  background: #ff3d3d;
+  transform: scale(1.05);
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 260px;
+  height: auto;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Auth Buttons */
+.auth button {
+  margin: 10px;
+  padding: 12px 25px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth button:hover {
+  background-color: #43a047;
+  transform: translateY(-2px);
+}
+
+/* Exhibits */
+.exhibits {
+  background-color: #CFFFE2;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 30px auto;
+  max-width: 700px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.exhibits img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Booking */
+.booking,
+.rating,
+.recommendations {
+  margin-top: 40px;
+}
+
+.booking input,
+.rating input {
+  margin: 8px;
+  padding: 12px;
+  width: 240px;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  transition: border-color 0.3s ease;
+}
+
+.booking input:focus,
+.rating input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+.booking button,
+.rating button {
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.booking button:hover,
+.rating button:hover {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+}
+
+/* Recommendations */
+.recommendations ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recommendations li {
+  margin: 12px 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Chart Section */
+canvas {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Visitor Counter */
+.counter-section {
+  font-size: 3.5rem;
+  font-weight: bold;
+  padding: 40px;
+  background: linear-gradient(135deg, #96C7BC, #CFFFE2);
+  color: #000;
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+
+/* body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.4s, color 0.4s;
+}
+
+.light-mode {
+  background: #fff;
+  color: #111;
+}
+
+.dark-mode {
+  background: #111;
+  color: #fff;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  color: white;
+  text-align: center;
+  backdrop-filter: brightness(70%);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+}
+
+.hero-content button {
+  padding: 10px 25px;
+  font-size: 1rem;
+  background: #ff5e57;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gallery img {
+  width: 250px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.auth button,
+.booking button,
+.rating button {
+  margin: 8px;
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input {
+  margin: 5px;
+  padding: 10px;
+  width: 220px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.recommendations ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recommendations li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.counter-section {
+  font-size: 3rem;
+  font-weight: bold;
+} */

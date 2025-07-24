@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PixelPast Museum</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+</head>
+
+<body class="light-mode">
+
+  <!-- Theme Toggle -->
+  <button id="toggle-mode" class="theme-toggle">🌙</button>
+
+  <!-- Hero with Background Video -->
+  <section id="home" class="hero-section">
+    <video autoplay muted loop id="bg-video">
+      <source src="assets/videos/background.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Welcome to PixelPast</h1>
+      <p>Explore history, science & art through time</p>
+      <button onclick="scrollToSection('dashboard')">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="tilt section">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="assets/images/placeholder1.jpg" alt="Gallery 1">
+      <img src="assets/images/placeholder2.jpg" alt="Gallery 2">
+    </div>
+  </section>
+
+  <!-- Visitor Dashboard -->
+  <section id="dashboard" class="section">
+    <h2>Visitor Dashboard</h2>
+
+    <!-- User Flow -->
+    <div class="auth">
+      <a href="registerLogin/login.html">
+        <button>Login</button>
+      </a>
+      <a href="registerLogin/register.html">
+        <button>Register</button>
+      </a>
+    </div>
+
+    <!-- Browse Exhibitions & Tours -->
+    <div class="exhibits tilt">
+      <h3>Browse Exhibitions</h3>
+      <img src="assets/images/placeholder1.jpg" alt="Exhibit">
+      <p>This is a brief description of the exhibit. More details and media here.</p>
+    </div>
+
+    <!-- Tour Visit Booking -->
+    <div class="booking">
+      <h3>Book Your Visit</h3>
+      <input type="date" placeholder="Select Date">
+      <input type="time" placeholder="Select Time">
+      <input type="number" placeholder="No. of People">
+      <button>Confirm Booking</button>
+      <p>Booking Confirmation will appear here.</p>
+    </div>
+
+    <!-- Tour Rating -->
+    <div class="rating">
+      <h3>Rate & Review Tour</h3>
+      <input type="number" placeholder="Rating (1-5)">
+      <button>Submit Review</button>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="recommendations">
+      <h3>Recommendations (ML)</h3>
+      <ul>
+        <li>🎯 Personalized Museum Suggestions</li>
+        <li>🔥 Popular Exhibits</li>
+        <li>📍 Nearby Museums (via API)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Visitor Analysis -->
+  <section id="analysis" class="section">
+    <h2>Visitor Analysis</h2>
+    <canvas id="chart" width="400" height="200"></canvas>
+  </section>
+
+  <!-- Animated Visitor Counter -->
+  <section class="section counter-section">
+    <h3>Total Visitors</h3>
+    <div class="counter" id="visitorCount">0</div>
+  </section>
+
+</body>
+<script src="script.js"></script>
+
+</html>
