@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Manage Exhibits</title>
+    <link rel="stylesheet" href="admin_style.css" />
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <h1>Manage Exhibits</h1>
+        <button onclick="window.location.href='admin_dashboard.html'">Back</button>
+    </header>
+
+    <main class="dashboard">
+
+        <!-- Add Exhibit Form -->
+        <form id="addExhibitForm" class="admin-card">
+            <h2>Add Exhibit</h2>
+            <input type="text" id="name" placeholder="Exhibit Name" required />
+            <input type="text" id="location" placeholder="Location" required />
+            <textarea id="description" placeholder="Description"></textarea>
+            <button type="submit">Add Exhibit</button>
+        </form>
+
+        <!-- Exhibit List -->
+        <div class="admin-card">
+            <h2>Exhibit List</h2>
+            <ul id="exhibitList"></ul>
+        </div>
+
+    </main>
+
+    <script>
+        let exhibits = [];
+
+        function renderExhibits() {
+            const list = document.getElementById("exhibitList");
+            list.innerHTML = '';
+            exhibits.forEach((exhibit, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+          <strong>${exhibit.name}</strong> (${exhibit.location}) - ${exhibit.description}
+          <button onclick="editExhibit(${index})">Edit</button>
+          <button onclick="deleteExhibit(${index})">Delete</button>
+        `;
+                list.appendChild(li);
+            });
+        }
+
+        document.getElementById("addExhibitForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const location = document.getElementById("location").value;
+            const description = document.getElementById("description").value;
+
+            exhibits.push({ name, location, description });
+            renderExhibits();
+
+            e.target.reset(); // clear the form
+        });
+
+        function deleteExhibit(index) {
+            exhibits.splice(index, 1);
+            renderExhibits();
+        }
+
+        function editExhibit(index) {
+            const exhibit = exhibits[index];
+            const newName = prompt("Edit Name:", exhibit.name);
+            const newLocation = prompt("Edit Location:", exhibit.location);
+            const newDescription = prompt("Edit Description:", exhibit.description);
+
+            if (newName && newLocation && newDescription) {
+                exhibits[index] = {
+                    name: newName,
+                    location: newLocation,
+                    description: newDescription
+                };
+                renderExhibits();
+            }
+        }
+
+        renderExhibits(); // Initial call
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Exhibits</title>
+    <link rel="stylesheet" href="admin_style.css">
+</head>
+
+<body>
+    <header class="admin-header">
+        <h1>Manage Exhibits</h1>
+        <button onclick="window.location.href='admin_dashboard.html'">Back</button>
+    </header>
+
+    <main class="dashboard">
+        <form class="admin-card">
+            <h2>Add Exhibit</h2>
+            <input type="text" placeholder="Exhibit Name" required>
+            <input type="text" placeholder="Location" required>
+            <textarea placeholder="Description"></textarea>
+            <button type="submit">Add Exhibit</button>
+        </form>
+
+        <div class="admin-card">
+            <h2>Existing Exhibits</h2>
+            <ul>
+                <li>Exhibit A <button>Edit</button> <button>Delete</button></li>
+                <li>Exhibit B <button>Edit</button> <button>Delete</button></li>
+            </ul>
+        </div>
+    </main>
+</body>
+
+</html> -->

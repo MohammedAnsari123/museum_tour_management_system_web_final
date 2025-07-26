@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin_style.css" />
+</head>
+
+<body>
+  <header class="admin-header">
+    <h1>Admin Dashboard</h1>
+    <div class="admin-button">
+      <button onclick="window.location.href='../index.html'">Logout</button>
+      <button onclick="window.location.href='admin_auth.html'">Login </button>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <div class="admin-card" onclick="go('manage_exhibits.html')">Manage Exhibits</div>
+    <div class="admin-card" onclick="go('manage_tours.html')">Manage Tours</div>
+    <div class="admin-card" onclick="go('analytics.html')">View Analytics</div>
+    <div class="admin-card" onclick="go('feedback.html')">Feedback & Reviews</div>
+    <div class="admin-card" onclick="go('ml_modules.html')">ML Modules</div>
+  </main>
+
+  <script>
+    function go(path) {
+      window.location.href = path;
+    }
+  </script>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin_style.css" />
+</head>
+<body>
+  <header class="admin-header">
+    <h1>Admin Dashboard</h1>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <main class="dashboard">
+    <section class="admin-card" onclick="navigate('manage_exhibits.html')">
+      <h2>Manage Exhibits</h2>
+      <p>Add, Edit, Delete museum exhibits</p>
+    </section>
+
+    <section class="admin-card" onclick="navigate('manage_tours.html')">
+      <h2>Manage Tours</h2>
+      <p>Control tour schedules and availability</p>
+    </section>
+
+    <section class="admin-card" onclick="navigate('analytics.html')">
+      <h2>View Analytics</h2>
+      <p>Visualize visitor stats and booking data</p>
+    </section>
+
+    <section class="admin-card" onclick="navigate('feedback.html')">
+      <h2>Feedback & Reviews</h2>
+      <p>Review and respond to visitor feedback</p>
+    </section>
+
+    <section class="admin-card" onclick="navigate('ml_modules.html')">
+      <h2>ML Modules</h2>
+      <p>AI: Recommendations, Prediction, Chatbot</p>
+    </section>
+  </main>
+
+  <script>
+    function navigate(url) {
+      window.location.href = url;
+    }
+
+    function logout() {
+      alert("Logging out...");
+      window.location.href = "../index.html";
+    }
+  </script>
+</body>
+</html> -->

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard - Museum TMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <h1>Admin Dashboard</h1>
+        <button onclick="logout()">Logout</button>
+    </header>
+
+    <main class="dashboard">
+        <section class="admin-card" onclick="navigate('manage_exhibits.html')">
+            <h2>Manage Exhibits</h2>
+            <p>Add, edit or remove museum exhibits</p>
+        </section>
+
+        <section class="admin-card" onclick="navigate('manage_tours.html')">
+            <h2>Manage Tours</h2>
+            <p>Organize tour dates, times & visitor limits</p>
+        </section>
+
+        <section class="admin-card" onclick="navigate('analytics.html')">
+            <h2>View Analytics</h2>
+            <p>Review bookings and visitor stats</p>
+        </section>
+
+        <section class="admin-card" onclick="navigate('feedback.html')">
+            <h2>Feedback & Reviews</h2>
+            <p>Read and respond to user feedback</p>
+        </section>
+
+        <section class="admin-card" onclick="navigate('ml_modules.html')">
+            <h2>ML Modules</h2>
+            <p>Booking Prediction, Tour Recommendation, Chatbot</p>
+        </section>
+    </main>
+
+    <script>
+        function navigate(path) {
+            window.location.href = path;
+        }
+
+        function logout() {
+            alert("Logging out...");
+            window.location.href = "../index.html";
+        }
+    </script>
+
+</body>
+
+</html>

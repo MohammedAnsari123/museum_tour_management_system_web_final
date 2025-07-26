@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Tours</title>
+  <link rel="stylesheet" href="admin_style.css">
+</head>
+
+<body>
+  <header class="admin-header">
+    <h1>Manage Tours</h1>
+    <button onclick="window.location.href='admin_dashboard.html'">Back</button>
+  </header>
+
+  <main class="dashboard">
+    <form id="tourForm" class="admin-card">
+      <h2>Add Tour</h2>
+      <input type="text" id="title" placeholder="Tour Title" required />
+      <input type="date" id="date" required />
+      <input type="time" id="time" required />
+      <button type="submit">Add Tour</button>
+    </form>
+
+    <div class="admin-card">
+      <h2>Upcoming Tours</h2>
+      <ul id="tourList"></ul>
+    </div>
+  </main>
+
+  <script>
+    let tours = [];
+
+    function renderTours() {
+      const list = document.getElementById("tourList");
+      list.innerHTML = "";
+      tours.forEach((tour, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <strong>${tour.title}</strong> - ${tour.date} @ ${tour.time}
+          <button onclick="editTour(${index})">Edit</button>
+          <button onclick="deleteTour(${index})">Delete</button>
+        `;
+        list.appendChild(li);
+      });
+    }
+
+    document.getElementById("tourForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const title = document.getElementById("title").value;
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+
+      tours.push({ title, date, time });
+      renderTours();
+      e.target.reset();
+    });
+
+    function editTour(index) {
+      const tour = tours[index];
+      const title = prompt("Edit title", tour.title);
+      const date = prompt("Edit date", tour.date);
+      const time = prompt("Edit time", tour.time);
+
+      if (title && date && time) {
+        tours[index] = { title, date, time };
+        renderTours();
+      }
+    }
+
+    function deleteTour(index) {
+      tours.splice(index, 1);
+      renderTours();
+    }
+
+    renderTours();
+  </script>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Tours</title>
+  <link rel="stylesheet" href="admin_style.css">
+</head>
+<body>
+  <header class="admin-header">
+    <h1>Manage Tours</h1>
+    <button onclick="window.location.href='admin_dashboard.html'">Back</button>
+  </header>
+
+  <main class="dashboard">
+    <form class="admin-card">
+      <h2>Add Tour</h2>
+      <input type="text" placeholder="Tour Title" required>
+      <input type="date" required>
+      <input type="time" required>
+      <button type="submit">Add Tour</button>
+    </form>
+
+    <div class="admin-card">
+      <h2>Upcoming Tours</h2>
+      <ul>
+        <li>Tour X - 2025-08-10 <button>Edit</button> <button>Delete</button></li>
+        <li>Tour Y - 2025-08-14 <button>Edit</button> <button>Delete</button></li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html> -->

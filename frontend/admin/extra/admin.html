@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin_dashboard.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#" onclick="showSection('')">Dashboard</a>
+      <a href="#" onclick="showSection('exhibits')">Manage Exhibits</a>
+      <a href="#" onclick="showSection('tours')">Manage Tours</a>
+      <a href="#" onclick="showSection('analytics')">View Analytics</a>
+      <a href="#" onclick="showSection('feedback')">Review Feedback</a>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+    <h1>Welcome, Admin</h1>
+
+    <div id="defaultSection">
+      <div class="stats">
+        <div class="card">
+          <h3>Total Users</h3>
+          <p>1,245</p>
+        </div>
+        <div class="card">
+          <h3>New Signups</h3>
+          <p>58</p>
+        </div>
+        <div class="card">
+          <h3>Revenue</h3>
+          <p>₹76,500</p>
+        </div>
+      </div>
+
+      <section class="activity">
+        <h2>Recent Activity</h2>
+        <ul>
+          <li>User A signed up</li>
+          <li>User B uploaded a document</li>
+          <li>Settings updated by Admin</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Manage Exhibits Section -->
+    <section class="admin-section" id="exhibits" style="display:none;">
+    <h2 style="text-align:center;">Add Exhibit</h2>
+    <div class="form-container">
+        <form>
+        <label for="exhibit-name">Exhibit Name</label>
+        <input type="text" id="exhibit-name" name="exhibit-name" placeholder="Enter exhibit name" />
+
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" placeholder="Enter description" />
+
+        <label for="image">Image Upload</label>
+        <input type="file" id="image" name="image" />
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" placeholder="Enter location" />
+
+        <label for="start-date">Start Date</label>
+        <input type="date" id="start-date" name="start-date" />
+
+        <label for="end-date">End Date</label>
+        <input type="date" id="end-date" name="end-date" />
+
+        <button type="submit">Add Exhibit</button>
+        </form>
+    </div>
+    </section>
+
+
+    <!-- Manage Tours Section -->
+    <section class="admin-section" id="tours" style="display:none;">
+      <h2>Manage Tours</h2>
+      <button>Add Tour</button>
+      <button>Edit Tour</button>
+      <button>Remove Tour</button>
+    </section>
+
+    <!-- View Analytics Section -->
+    <section class="admin-section" id="analytics" style="display:none;">
+      <h2>View Analytics</h2>
+      <button>Booking Analytics</button>
+      <button>Map Visualization</button>
+      <button>India-dataset Dashboard</button>
+    </section>
+
+    <!-- Review Feedback Section -->
+    <section class="admin-section" id="feedback" style="display:none;">
+      <h2>Review Feedback</h2>
+      <button>View Ratings</button>
+      <button>Read Reviews</button>
+      <button>Respond to Feedback</button>
+    </section>
+  </main>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = ['defaultSection', 'exhibits', 'tours', 'analytics', 'feedback'];
+      sections.forEach(id => {
+        document.getElementById(id).style.display = (id === sectionId || (sectionId === '' && id === 'defaultSection')) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

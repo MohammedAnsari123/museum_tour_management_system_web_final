@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Analytics</title>
+  <link rel="stylesheet" href="admin_style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header class="admin-header">
+    <h1>Visitor Analytics</h1>
+    <button onclick="window.location.href='admin_dashboard.html'">Back</button>
+  </header>
+
+  <main class="dashboard">
+    <div class="admin-card">
+      <h2>Weekly Visitors</h2>
+      <canvas id="visitorChart"></canvas>
+    </div>
+  </main>
+
+  <script>
+    const ctx = document.getElementById('visitorChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Visitors',
+          data: [120, 150, 90, 200, 300, 250, 100],
+          backgroundColor: '#E63946'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analytics</title>
+  <link rel="stylesheet" href="admin_style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="admin-header">
+    <h1>Analytics</h1>
+    <button onclick="window.location.href='admin_dashboard.html'">Back</button>
+  </header>
+
+  <main class="dashboard">
+    <div class="admin-card">
+      <h2>Weekly Visitors</h2>
+      <canvas id="visitorsChart"></canvas>
+    </div>
+  </main>
+
+  <script>
+    new Chart(document.getElementById("visitorsChart"), {
+      type: 'bar',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Visitors',
+          data: [120, 150, 90, 170, 200, 240, 180],
+          backgroundColor: '#E63946'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+</body>
+</html> -->

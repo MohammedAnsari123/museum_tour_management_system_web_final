@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback</title>
+  <link rel="stylesheet" href="admin_style.css">
+</head>
+
+<body>
+  <header class="admin-header">
+    <h1>Visitor Feedback</h1>
+    <button onclick="window.location.href='admin_dashboard.html'">Back</button>
+  </header>
+
+  <main class="dashboard">
+    <div class="admin-card">
+      <h2>Reviews</h2>
+      <ul id="reviewList"></ul>
+    </div>
+
+    <div class="admin-card">
+      <h2>Add Feedback (Simulated)</h2>
+      <input id="feedbackText" type="text" placeholder="Write feedback" />
+      <input id="feedbackRating" type="number" min="1" max="5" placeholder="Rating (1-5)" />
+      <button onclick="addFeedback()">Submit</button>
+    </div>
+  </main>
+
+  <script>
+    const reviews = [];
+
+    function addFeedback() {
+      const text = document.getElementById("feedbackText").value;
+      const rating = document.getElementById("feedbackRating").value;
+      if (text && rating >= 1 && rating <= 5) {
+        reviews.push({ text, rating });
+        renderFeedback();
+        document.getElementById("feedbackText").value = '';
+        document.getElementById("feedbackRating").value = '';
+      }
+    }
+
+    function renderFeedback() {
+      const list = document.getElementById("reviewList");
+      list.innerHTML = '';
+      reviews.forEach((f, i) => {
+        const li = document.createElement("li");
+        li.innerHTML = `"${f.text}" - ⭐${f.rating} <button onclick="remove(${i})">Delete</button>`;
+        list.appendChild(li);
+      });
+    }
+
+    function remove(i) {
+      reviews.splice(i, 1);
+      renderFeedback();
+    }
+  </script>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visitor Feedback</title>
+  <link rel="stylesheet" href="admin_style.css">
+</head>
+<body>
+  <header class="admin-header">
+    <h1>Feedback & Reviews</h1>
+    <button onclick="window.location.href='admin_dashboard.html'">Back</button>
+  </header>
+
+  <main class="dashboard">
+    <div class="admin-card">
+      <h2>Visitor Feedback</h2>
+      <ul>
+        <li>"Amazing tour!" - ★★★★★ <button>Reply</button></li>
+        <li>"Could be improved." - ★★★☆☆ <button>Reply</button></li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html> -->

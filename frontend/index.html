@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Museum Management System</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-img">
+            <h1>Museum TMS</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Gallery</a></li>
+            </ul>
+        </nav>
+        <div class="nav-button">
+            <input type="button" value="Visiters" onclick="navigateVisiter('visiters/index.html')">
+            <input type="button" value="Admin " onclick="navigateAdmin('admin/admin_dashboard.html')">
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-info-button">
+            <div class="hero-info">
+                <h1>Welcome to PixelPast</h1>
+                <h1>Explore Virtual Museums Across the Globe</h1>
+            </div>
+            <div class="hero-button">
+                <input type="button" value="Visiters " onclick="navigateVisiter('visiters/index.html')">
+                <input type="button" value="Admin " onclick="navigateAdmin('admin/admin_dashboard.html')">
+            </div>
+        </div>
+    </section>
+
+    <main class="museum-section-info">
+        <section class="museum-info">
+            <div class="museum-name">
+                <h1>Trending Museums</h1>
+            </div>
+            <div class="museum-img-sec">
+                <div class="museum-img-section">
+                    <div class="img-info">
+                        <img src="images/art/Art1.jpg" alt="Museum">
+                        <p>Explore modern art like never before</p>
+                    </div>
+                </div>
+                <div class="museum-img-section">
+                    <div class="img-info">
+                        <img src="images/art/Art2.jpg" alt="Museum">
+                        <p>Discover classical masterpieces</p>
+                    </div>
+                </div>
+                <div class="museum-img-section">
+                    <div class="img-info">
+                        <img src="images/culture/culture1.jpg" alt="Museum">
+                        <p>Experience diverse cultures virtually</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Museum Management</h3>
+                <p>A virtual platform to explore, book, and experience museum tours with AI-driven recommendations.</p>
+            </div>
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="admin/admin_auth.html">Admin Login</a></li>
+                    <li><a href="visiters/registerLogin/login.html">Visitor Login</a></li>
+                    <li><a href="#">Exhibits</a></li>
+                    <li><a href="#">Tours</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h4>Contact</h4>
+                <p>Email: info@museum.com</p>
+                <p>Phone: +91 12345 67890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Museum Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

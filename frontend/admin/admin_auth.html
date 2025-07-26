@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login & Register</title>
+  <link rel="stylesheet" href="admin_auth.css" />
+</head>
+<body>
+
+  <div class="auth-container">
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('login')">Login</button>
+      <button class="tab" onclick="switchTab('register')">Register</button>
+    </div>
+
+    <div id="login" class="form active">
+      <h2>Admin Login</h2>
+      <input type="text" id="loginUser" placeholder="Username" required />
+      <input type="password" id="loginPass" placeholder="Password" required />
+      <button onclick="loginAdmin()">Login</button>
+      <p id="loginMsg"></p>
+    </div>
+
+    <div id="register" class="form">
+      <h2>Admin Register</h2>
+      <input type="text" id="regUser" placeholder="New Username" required />
+      <input type="password" id="regPass" placeholder="New Password" required />
+      <button onclick="registerAdmin()">Register</button>
+      <p id="registerMsg"></p>
+    </div>
+  </div>
+
+  <script src="admin_auth.js"></script>
+</body>
+</html>
